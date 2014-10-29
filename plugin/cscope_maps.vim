@@ -22,8 +22,19 @@
 "
 " Jason Duell       jduell@alumni.princeton.edu     2002/3/7
 " Charles Hsu       charles0126@gmial.com           2013/03/17
+" Jumbo88888 Fang   physical2004@gmial.com          2014/10/29
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Reference : [Autoloading Cscope Database](http://vim.wikia.com/wiki/Autoloading_Cscope_Database)
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
 
 function CSBuild()
     if exists("s:CSCOPE_DB_EXIST")
@@ -211,8 +222,8 @@ if has("cscope")
     " Reload cscope DB or create new one
     "
     "
-    :command -nargs=0 CSBuild :call CSBuild()
-"    nmap <leader>rb :call CSBuild()<CR>
+    :command -nargs=0 LCS :call LoadCscope()
+"    nmap <leader>rb :call LoadCscope()<CR>
 
 
 endif
