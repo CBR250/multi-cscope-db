@@ -222,7 +222,7 @@ if has("cscope")
     " Reload cscope DB or create new one
     "
     "
-    :command -nargs=0 LCS :call LoadCscope()
+    :command -nargs=0 Loadcs :call LoadCscope()
 "    nmap <leader>rb :call LoadCscope()<CR>
 
 
