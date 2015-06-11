@@ -155,6 +155,14 @@ if has("cscope")
     nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
 
+    cmap ccsss cs find s  
+    cmap ccssg cs find g  
+    cmap ccssc cs find c  
+    cmap ccsst cs find t  
+    cmap ccsse cs find e  
+    cmap ccssf cs find f  
+    cmap ccssi cs find i  
+    cmap ccssd cs find d  
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
