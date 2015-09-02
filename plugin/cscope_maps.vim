@@ -24,6 +24,7 @@
 " Charles Hsu       charles0126@gmial.com           2013/03/17
 " Jumbo88888 Fang   physical2004@gmial.com          2014/10/29
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocscopeverbose 
 
 " Reference : [Autoloading Cscope Database](http://vim.wikia.com/wiki/Autoloading_Cscope_Database)
 function! LoadCscope()
